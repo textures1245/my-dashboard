@@ -37,7 +37,7 @@
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- Font Awesome Icons -->
     <script
-      src="https://kit.fontawesome.com/42d5adcbca.js"
+      src="https://kit.fontawesome.com/1c32674d7d.js"
       crossorigin="anonymous"
     ></script>
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
@@ -47,6 +47,8 @@
       href="../assets/css/argon-dashboard.css?v=2.0.4"
       rel="stylesheet"
     />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
   </head>
 
   <body class="g-sidenav-show bg-gray-100">
@@ -79,14 +81,14 @@
             class="navbar-brand-img h-100"
             alt="main_logo"
           />
-          <span class="ms-1 font-weight-bold">Argon Dashboard 2</span>
+          <span class="ms-1 font-weight-bold">Phakh Dashboard</span>
         </a>
       </div>
       <hr class="horizontal dark mt-0" />
       <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="../pages/dashboard.html">
+            <a class="nav-link" href="/dashboard/index.html">
               <div
                 class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center"
               >
@@ -96,58 +98,34 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../pages/tables.html">
+            <a class="nav-link" href="/dashboard/pages/skill.html">
               <div
-                class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center"
+                class="icon-sm border-radius-md text-center text-dark me-2 d-flex align-items-center justify-content-center"
               >
-                <i
-                  class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"
-                ></i>
+                <i class="fa-sharp fa-solid fa-code fa-lg"></i>
               </div>
-              <span class="nav-link-text ms-1">Tables</span>
+              <span class="nav-link-text ms-1">Skills</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../pages/billing.html">
+            <a class="nav-link" href="/dashboard/pages/course.html">
               <div
-                class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center"
+                class="icon-sm border-radius-md text-center text-dark me-2 d-flex align-items-center justify-content-center"
               >
-                <i
-                  class="ni ni-credit-card text-success text-sm opacity-10"
-                ></i>
+                <i class="fa fa-duotone fa-book"></i>
               </div>
-              <span class="nav-link-text ms-1">Billing</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../pages/virtual-reality.html">
-              <div
-                class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center"
-              >
-                <i class="ni ni-app text-info text-sm opacity-10"></i>
-              </div>
-              <span class="nav-link-text ms-1">Virtual Reality</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../pages/rtl.html">
-              <div
-                class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center"
-              >
-                <i class="ni ni-world-2 text-danger text-sm opacity-10"></i>
-              </div>
-              <span class="nav-link-text ms-1">RTL</span>
+              <span class="nav-link-text ms-1">Courses</span>
             </a>
           </li>
           <li class="nav-item mt-3">
             <h6
               class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6"
             >
-              Account pages
+              About me
             </h6>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="../pages/profile.html">
+            <a class="nav-link active" href="/dashboard/pages/profile.html">
               <div
                 class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center"
               >
@@ -156,56 +134,29 @@
               <span class="nav-link-text ms-1">Profile</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../pages/sign-in.html">
-              <div
-                class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center"
-              >
-                <i
-                  class="ni ni-single-copy-04 text-warning text-sm opacity-10"
-                ></i>
-              </div>
-              <span class="nav-link-text ms-1">Sign In</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../pages/sign-up.html">
-              <div
-                class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center"
-              >
-                <i class="ni ni-collection text-info text-sm opacity-10"></i>
-              </div>
-              <span class="nav-link-text ms-1">Sign Up</span>
-            </a>
-          </li>
         </ul>
       </div>
-      <div class="sidenav-footer mx-3">
+      <div class="sidenav-footer mx-3 mt-5">
         <div class="card card-plain shadow-none" id="sidenavCard">
           <img
             class="w-50 mx-auto"
-            src="../assets/img/illustrations/icon-documentation.svg"
+            src="/dashboard/assets/img/illustrations/icon-documentation.svg"
             alt="sidebar_illustration"
           />
           <div class="card-body text-center p-3 w-100 pt-0">
             <div class="docs-info">
-              <h6 class="mb-0">Need help?</h6>
-              <p class="text-xs font-weight-bold mb-0">Please check our docs</p>
+              <h6 class="mb-0">Check out!</h6>
+              <p class="text-xs font-weight-bold mb-0">My Portfolio</p>
+              <div class="d-flex justify-content-center mt-2">
+                <a
+                  class="col-8 btn btn-xs btn-primary float-right mb-0 d-lg-block"
+                  href="https://portfolio-static-website.vercel.app/"
+                  >Go Check Out</a
+                >
+              </div>
             </div>
           </div>
         </div>
-        <a
-          href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard"
-          target="_blank"
-          class="btn btn-dark btn-sm w-100 mb-3"
-          >Documentation</a
-        >
-        <a
-          class="btn btn-primary btn-sm mb-0 w-100"
-          href="https://www.creative-tim.com/product/argon-dashboard-pro?ref=sidebarfree"
-          type="button"
-          >Upgrade to pro</a
-        >
       </div>
     </aside>
     <div class="main-content position-relative max-height-vh-100 h-100">
@@ -288,7 +239,6 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <i class="fa fa-bell cursor-pointer"></i>
                 </a>
                 <ul
                   class="dropdown-menu dropdown-menu-end px-2 py-3 ms-n4"
@@ -302,7 +252,7 @@
                       <div class="d-flex py-1">
                         <div class="my-auto">
                           <img
-                            src="../assets/img/team-2.jpg"
+                            src="https://scontent.fcnx2-1.fna.fbcdn.net/v/t39.30808-6/271589651_1046773362833557_2588674042236725344_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHYlfNqPLraTEg2dHbmFehNS_ZN83Gc3IBL9k3zcZzcgBlJLgBWioyvZQob9NnET7vX8zaICTErZB_SvWuigQl_&_nc_ohc=69zUyfEllYQAX9QrE24&tn=lT3Pny0rMwTx4Rsw&_nc_ht=scontent.fcnx2-1.fna&oh=00_AfCvEufmzApmUr12714HndUi6O3nbdyfUL6vJn9Z_txrYQ&oe=63A9EAFC"
                             class="avatar avatar-sm me-3"
                           />
                         </div>
@@ -419,7 +369,7 @@
             <div class="col-auto">
               <div class="avatar avatar-xl position-relative">
                 <img
-                  src="../assets/img/team-1.jpg"
+                  src="http://bit.ly/3jtdxT1"
                   alt="profile_image"
                   class="w-100 border-radius-lg shadow-sm"
                 />
@@ -643,7 +593,7 @@
                   <div class="mt-n4 mt-lg-n6 mb-4 mb-lg-0">
                     <a href="javascript:;">
                       <img
-                        src="../assets/img/team-2.jpg"
+                        src="https://scontent.fcnx2-1.fna.fbcdn.net/v/t39.30808-6/271589651_1046773362833557_2588674042236725344_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHYlfNqPLraTEg2dHbmFehNS_ZN83Gc3IBL9k3zcZzcgBlJLgBWioyvZQob9NnET7vX8zaICTErZB_SvWuigQl_&_nc_ohc=69zUyfEllYQAX9QrE24&tn=lT3Pny0rMwTx4Rsw&_nc_ht=scontent.fcnx2-1.fna&oh=00_AfCvEufmzApmUr12714HndUi6O3nbdyfUL6vJn9Z_txrYQ&oe=63A9EAFC"
                         class="rounded-circle img-fluid border border-2 border-white"
                       />
                     </a>
@@ -651,45 +601,45 @@
                 </div>
               </div>
               <div
-                class="card-header text-center border-0 pt-0 pt-lg-2 pb-4 pb-lg-3"
+                class="card-header text-center border-0 pt-0 pt-lg-2 pb-4 pb-lg-3 "
               >
-                <div class="d-flex justify-content-between">
-                  <a
-                    href="javascript:;"
-                    class="btn btn-sm btn-info mb-0 d-none d-lg-block"
-                    >Connect</a
-                  >
-                  <a
-                    href="javascript:;"
-                    class="btn btn-sm btn-info mb-0 d-block d-lg-none"
-                    ><i class="ni ni-collection"></i
-                  ></a>
-                  <a
-                    href="javascript:;"
-                    class="btn btn-sm btn-dark float-right mb-0 d-none d-lg-block"
-                    >Message</a
-                  >
-                  <a
-                    href="javascript:;"
-                    class="btn btn-sm btn-dark float-right mb-0 d-block d-lg-none"
-                    ><i class="ni ni-email-83"></i
-                  ></a>
-                </div>
+                  <div class="row grid gap-2">
+                    <a
+                      href="https://www.facebook.com/Taripark.Sitthikaew"
+                      class="col btn btn-sm btn-info mb-0 d-lg-block"
+                      ><i class="fa fa-brands fa-facebook fa-lg"></i></a
+                    >
+                    <a
+                    href="https://github.com/textures1245"
+                    class="col btn btn-sm btn-dark float-right mb-0 d-lg-block"
+                    ><i class="fa fa-brands fa-github"></i></a
+                    >
+                    <a
+                      href="https://www.instagram.com/phakh_guy/"
+                      class="col btn btn-sm btn-danger float-right mb-0 d-lg-block"
+                      ><i class="fa fa-brands fa-instagram fa-lg"></i></a
+                    >
+                    <a
+                      href="https://github.com/textures1245"
+                      class="col btn btn-sm btn-primary float-right mb-0 d-lg-block"
+                      >Message</a
+                    >
+                    </div>
               </div>
               <div class="card-body pt-0">
                 <div class="row">
                   <div class="col">
                     <div class="d-flex justify-content-center">
                       <div class="d-grid text-center">
-                        <span class="text-lg font-weight-bolder">22</span>
+                        <span class="text-lg font-weight-bolder">336+</span>
                         <span class="text-sm opacity-8">Friends</span>
                       </div>
                       <div class="d-grid text-center mx-4">
-                        <span class="text-lg font-weight-bolder">10</span>
-                        <span class="text-sm opacity-8">Photos</span>
+                        <span class="text-lg font-weight-bolder">21+</span>
+                        <span class="text-sm opacity-8">Skills</span>
                       </div>
                       <div class="d-grid text-center">
-                        <span class="text-lg font-weight-bolder">89</span>
+                        <span class="text-lg font-weight-bolder">89+</span>
                         <span class="text-sm opacity-8">Comments</span>
                       </div>
                     </div>
@@ -751,6 +701,18 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-left: 0.2px;" class="row mt-3">
+          <div style="height: 80vh !important;" class="card">
+            <div class="card-header pb-0">
+              <p class="fw-bold">My Location <small>(9/1, Muu 12, Maejo Mai 2, Nong Han, San Sai, Chiang Mai )</small>
+              </p>
+              <hr class="container mx-auto bg-dark">
+            </div>
+            <div class="card-body">
+                <div class="rounded" style="position: relative; bottom: 12; width: 100%; height: 100%" id="map"></div>
             </div>
           </div>
         </div>
@@ -972,5 +934,27 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+    <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoidGV4dHVyZTEyNDUiLCJhIjoiY2t4MWhtbXA4MHA2NjJ3cG5qbjhrazNiMyJ9.HPT1qH3FcioR8i8EBK0NWw';
+    const coordinates = [99.00384927171066, 18.902903493976844];
+    const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+    style: 'mapbox://styles/mapbox/streets-v12', // style URL
+    center: coordinates, // starting position [lng, lat]
+    zoom: 18 // starting zoom 18.903350653683077, 99.004004895585 18.902903493976844, 99.00384927171066
+    });
+    map.addControl(new mapboxgl.NavigationControl());
+
+new mapboxgl.Marker()
+  .setLngLat(coordinates)
+  .setPopup(
+      new mapboxgl.Popup({offset: 25})
+      .setHTML(
+          `<div style="text-align: center"><h6>${'My Location'}</h6><small class="text-muted">${'9/1, Muu 12, Maejo Mai 2, Nong Han, San Sai, Chiang Mai'}</small></div>`
+      )
+  )
+  .addTo(map)
+    </script>
   </body>
 </html>
